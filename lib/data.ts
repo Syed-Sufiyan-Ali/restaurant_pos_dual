@@ -9,9 +9,9 @@ export const categories: Category[] = [
 ];
 
 const pizzaSizes = [
-  { label: "Small",   price: 0,   serves: "1–2 persons · 4 pcs" },
-  { label: "Regular", price: 150, serves: "2–3 persons · 6 pcs" },
-  { label: "Large",   price: 350, serves: "3–4 persons · 8 pcs" },
+  { id: "s-sm", label: "Small",   price: 0,   serves: "1–2 persons · 4 pcs" },
+  { id: "s-reg", label: "Regular", price: 150, serves: "2–3 persons · 6 pcs" },
+  { id: "s-lg", label: "Large",   price: 350, serves: "3–4 persons · 8 pcs" },
 ];
 const pizzaExtras = [
   { id: "cheese",   label: "Extra Cheese",  price: 80  },

@@ -71,7 +71,7 @@ interface CardConfig {
   icon: React.ElementType;
   iconColor: string;
   iconBg: string;
-  format: (v: number) => string;
+  format: (v: any) => string;
 }
 
 const CARDS: CardConfig[] = [
@@ -81,7 +81,7 @@ const CARDS: CardConfig[] = [
     icon: Banknote,
     iconColor: "text-emerald-500",
     iconBg: "bg-emerald-500/10",
-    format: (v) => `Rs. ${v.toLocaleString("en-PK", { minimumFractionDigits: 0 })}`,
+    format: (v) => `Rs. ${Number(v || 0).toLocaleString("en-PK", { minimumFractionDigits: 0 })}`,
   },
   {
     key: "todayOrders",
@@ -135,7 +135,7 @@ async function load() {
   if (res.success) {
     console.log("Dashboard response:", res.data);
 
-    setStats(res.data.stats); // <-- THIS WAS MISSING
+    setStats(res.data);
   } else {
     setError(res.message);
   }

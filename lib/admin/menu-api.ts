@@ -124,7 +124,7 @@ export function deleteCategory(id: string) {
 // ─── Menu Items ───────────────────────────────────────────────────────────────
 
 export function fetchMenuItems(query: MenuItemsQuery = {}) {
-  return adminApi.get<PaginatedResult<MenuItem>>(`/api/menu/items${buildQS(query)}`);
+  return adminApi.get<PaginatedResult<MenuItem>>(`/api/menu/items${buildQS(query as any)}`);
 }
 
 export function fetchMenuItem(id: string) {

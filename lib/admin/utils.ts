@@ -75,3 +75,18 @@ export function formatDateTime(date: string | Date): string {
     minute: "2-digit",
   }).format(new Date(date));
 }
+
+export function formatShortDate(date: string | Date): string {
+  return new Intl.DateTimeFormat("en-PK", {
+    day: "numeric",
+    month: "short",
+  }).format(new Date(date));
+}
+
+export function formatDate(date: string | Date): string {
+  return new Intl.DateTimeFormat("en-PK", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(date));
+}

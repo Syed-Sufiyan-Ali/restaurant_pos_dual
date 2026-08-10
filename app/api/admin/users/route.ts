@@ -4,7 +4,7 @@ import { ok, serverError } from "@/lib/api/response";
 import { requireRole } from "@/lib/auth/middleware";
 
 export async function GET(req: NextRequest) {
-  const { error } = requireRole(req, ["ADMIN","SUPER_ADMIN"]);
+  const { error } = await requireRole(req, ["ADMIN","SUPER_ADMIN"]);
   if (error) return error;
   try {
     const page  = Math.max(1, Number(new URL(req.url).searchParams.get("page") ?? 1));

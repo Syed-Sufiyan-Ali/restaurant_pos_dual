@@ -47,7 +47,7 @@ export function RecentOrdersTable({ state }: RecentOrdersTableProps) {
             <li key={order.id} className="flex items-center justify-between gap-3 px-5 py-3 text-sm">
               <div className="min-w-0">
                 <p className="font-[family-name:var(--font-admin-mono)] text-xs text-[var(--admin-text-faint)]">#{order.orderNumber}</p>
-                <p className="truncate text-[var(--admin-text)]">{order.customer?.name ?? order.guestName ?? "Guest"}</p>
+                <p className="truncate text-[var(--admin-text)]">{order.user?.name ?? order.guestName ?? "Guest"}</p>
               </div>
               <div className="shrink-0 text-right">
                 <p className="font-medium text-[var(--admin-text)]">{formatCurrency(order.totalAmount)}</p>

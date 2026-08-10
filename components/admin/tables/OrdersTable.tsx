@@ -29,9 +29,9 @@ export function OrdersTable({ orders, onSelect }: OrdersTableProps) {
         </thead>
         <tbody className="divide-y divide-[var(--admin-border)]">
           {orders.map((order) => {
-            const isGuest = !order.customer;
-            const customerName = order.customer?.name ?? order.guestName ?? "—";
-            const phone = order.customer?.phone ?? order.guestPhone ?? "—";
+            const isGuest = !order.user;
+            const customerName = order.user?.name ?? order.guestName ?? "—";
+            const phone = order.user?.phone ?? order.guestPhone ?? "—";
             return (
               <tr key={order.id} className="cursor-pointer hover:bg-[var(--admin-surface-hover)]" onClick={() => onSelect(order.id)}>
                 <td className="px-4 py-3 font-[family-name:var(--font-admin-mono)] text-xs text-[var(--admin-text)]">
@@ -71,8 +71,8 @@ export function OrdersTable({ orders, onSelect }: OrdersTableProps) {
       {/* Mobile cards */}
       <div className="divide-y divide-[var(--admin-border)] md:hidden">
         {orders.map((order) => {
-          const isGuest = !order.customer;
-          const customerName = order.customer?.name ?? order.guestName ?? "—";
+          const isGuest = !order.user;
+          const customerName = order.user?.name ?? order.guestName ?? "—";
           return (
             <button
               key={order.id}

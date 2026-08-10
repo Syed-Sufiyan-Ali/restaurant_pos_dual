@@ -1,0 +1,6 @@
+{
+  "name": "Pizza Town Sukkur",
+  "description": "Pizza Town Sukkur - Best Pizza & Burgers online ordering",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
