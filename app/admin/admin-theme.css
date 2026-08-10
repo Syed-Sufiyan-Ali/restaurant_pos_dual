@@ -1,0 +1,80 @@
+/*
+  Admin-only design tokens. Everything is scoped under .admin-root so this
+  can never leak into or clash with the customer-facing site's styles.
+
+  Palette direction: a wood-fired pizza oven at night — charred, warm
+  charcoal surfaces with a single glowing-ember accent, rather than the
+  generic cream+terracotta combo. Basil green / semolina gold / crust red
+  cover success / warning / danger in a way that still reads as "pizzeria".
+*/
+
+.admin-root {
+  --admin-bg: #14100d;
+  --admin-surface: #1e1815;
+  --admin-surface-2: #2a231e;
+  --admin-surface-hover: #332b24;
+  --admin-border: #362e27;
+  --admin-border-strong: #4a3f35;
+
+  --admin-text: #f5f1ea;
+  --admin-text-muted: #a69a8d;
+  --admin-text-faint: #7a6f64;
+
+  --admin-ember: #ff6b35;
+  --admin-ember-soft: rgba(255, 107, 53, 0.14);
+  --admin-basil: #6b9e4a;
+  --admin-basil-soft: rgba(107, 158, 74, 0.14);
+  --admin-semolina: #e8b94d;
+  --admin-semolina-soft: rgba(232, 185, 77, 0.16);
+  --admin-crust: #e0654a;
+  --admin-crust-soft: rgba(201, 72, 47, 0.16);
+
+  --admin-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+
+  background-color: var(--admin-bg);
+  color: var(--admin-text);
+}
+
+.admin-root.theme-light {
+  --admin-bg: #fbf8f4;
+  --admin-surface: #ffffff;
+  --admin-surface-2: #f3eee7;
+  --admin-surface-hover: #ece5db;
+  --admin-border: #e6ded2;
+  --admin-border-strong: #d8cdbc;
+
+  --admin-text: #1f1b17;
+  --admin-text-muted: #6b6057;
+  --admin-text-faint: #948a7e;
+
+  --admin-ember-soft: rgba(255, 107, 53, 0.1);
+  --admin-basil-soft: rgba(107, 158, 74, 0.1);
+  --admin-semolina-soft: rgba(232, 185, 77, 0.18);
+  --admin-crust: #c9482f;
+  --admin-crust-soft: rgba(201, 72, 47, 0.1);
+
+  --admin-shadow: 0 8px 24px rgba(31, 27, 23, 0.08);
+  color-scheme: light;
+}
+
+/* Signature detail: the active nav indicator has a slow ember-glow pulse. */
+@keyframes admin-ember-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--admin-ember-soft);
+  }
+  50% {
+    box-shadow: 0 0 0 4px var(--admin-ember-soft);
+  }
+}
+
+.admin-ember-dot {
+  animation: admin-ember-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-ember-dot {
+    animation: none;
+  }
+}
